@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+
+
+<!--    inspiration from:-->
+<!--    user3838403, Jul 14, 2014, Set two buttons to same width regardless of screen size?, https://stackoverflow.com/questions/6982395/set-two-buttons-to-same-width-regardless-of-screen-size#:~:text=Use%20android%3Alayout_weight%3D%221,have%20half%20the%20parent's%20width.&text=Save%20this%20answer.,-Show%20activity%20on-->
+
+
+    <TableLayout
+        android:id="@+id/tableLayoutId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                        android:id="@+id/addCityButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/addCityBtnText"
+                        android:layout_weight="0.5" />
+
+                <Button
+                    android:id="@+id/DeleteCityButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deleteCityBtnText"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+            </TableRow>
+
+    </TableLayout>
+
+
+    <ListView
+        android:id="@+id/cityList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutId">
+
+
+    </ListView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
